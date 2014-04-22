@@ -1,3 +1,12 @@
+//
+//  3cuerpos.c
+//
+//
+//  Created by Juliana Ayala and David Aleman
+//
+//
+//
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -257,9 +266,9 @@ void get_acceleration(FLOAT *ax, FLOAT *ay, FLOAT *az, FLOAT *x, FLOAT *y, FLOAT
       if(j!=i){
           r_ij = (pow((x[i] - x[j]),2.0) + pow((y[i] - y[j]),2.0) + pow((z[i] - z[j]),2.0));
           r_ij = sqrt(r_ij);
-          ax[i] += -G_GRAV *mass[j]/ pow(r_ij,1.5) * (x[i] - x[j]);
-          ay[i] += -G_GRAV *mass[j]/ pow(r_ij,1.5) * (y[i] - y[j]);
-          az[i] += -G_GRAV *mass[j] / pow(r_ij,1.5) * (z[i] - z[j]);
+          ax[i] += -G_GRAV *mass[j]/ pow(r_ij,3.0) * (x[i] - x[j]);
+          ay[i] += -G_GRAV *mass[j]/ pow(r_ij,3.0) * (y[i] - y[j]);
+          az[i] += -G_GRAV *mass[j] / pow(r_ij,3.0) * (z[i] - z[j]);
           
       }
     }    
