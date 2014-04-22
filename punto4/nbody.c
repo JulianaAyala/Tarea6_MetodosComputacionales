@@ -105,10 +105,10 @@ int main(int argc, char **argv){
   FLOAT *mass;
 
   /*timestep variables*/
-  FLOAT h= 0.001;
-  FLOAT time = 1000000000;
+  FLOAT h= 0.01;
+  FLOAT time = 100;
   int n_steps = (int)(time/h);
-  int n_points = 10000;
+  int n_points = 100;
   FLOAT radius = 4125296.12; /*Esta distancia equivale a 20 parsecs en unidades astronomicas*/
   FLOAT epsilon = 2062.664806; /*La constante que uso para modificar la ley de la gravedad i.e 0.01 parsecs en UA*/
   FLOAT unit_mass = 1.0; 
@@ -260,7 +260,7 @@ int main(int argc, char **argv){
       for(j=0;j<n_points;j++){
  /*Donde las aproximaciones para las velocidades y posiciones en cada instante de tiempo vendran dadas por: */  
           
-	x[j] = x[j] + (1.0/6.0)*(dx1[j]+(2*dx2[j])+(2*dx3[j])+dx4[j]);
+        x[j] = x[j] + (1.0/6.0)*(dx1[j]+(2*dx2[j])+(2*dx3[j])+dx4[j]);
         y[j] = y[j] + (1.0/6.0)*(dy1[j]+(2*dy2[j])+(2*dy3[j])+dy4[j]);
         z[j] = z[j] + (1.0/6.0)*(dz1[j]+(2*dz2[j])+(2*dz3[j])+dz4[j]);
         
@@ -272,10 +272,10 @@ int main(int argc, char **argv){
       
       /*Solo imprimo los datos en 20 instantes de tiempo distribuidos uniformemente en el tiempo total de evolucion del sistema*/
      for(j=0; j<20; j++){
-	if(i== j*(n_steps/20)){
-          for(k=0; k<n_points; k++){
-            fprintf(in," %f %f %f\n ", x[k], y[k], z[k]); 
-          }         
+         if(i== j*(n_steps/20)){
+             for(k=0; k<n_points; k++){
+                 fprintf(in," %f %f %f\n ", x[k], y[k], z[k]);
+             }
          }
       }
 
