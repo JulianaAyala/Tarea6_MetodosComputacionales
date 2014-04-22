@@ -1,7 +1,6 @@
 //
 //  volterra_lotka.c
 //
-//
 //  Created by Juliana Ayala and David Aleman
 //
 
