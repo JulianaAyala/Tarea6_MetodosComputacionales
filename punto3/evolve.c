@@ -18,7 +18,7 @@
 
 //Definimos las constantes iguales a las de las condiciones iniciales
 const float PI= 3.14159;
-const float G= 1.3267297*pow(10,11); //Constante gravitacional en Km³/(mSolares * s²)
+const float G= 4.296E-6; //Constante gravitacional en Km2 * kpc/(mSolares * s2)
 
 float func_prime_1(float x,float y_1,float x_1,float y_2,float *x_m,float *y_m,int *id,int a);
 float func_prime_2(float x,float y_1,float x_1,float y_2,float *x_m ,float *y_m,int *id, int a);
@@ -29,7 +29,7 @@ float *RungeKutta(float x_old, float y1_old,float x_1, float y2_old,float *x_m,f
 
 int main(int argc, char **argv){
     
-    //defino valores de entrada como tiempo, momentos y masa
+    //defino valores de entrada como masa, tiempo, momentos y el numero de particulas antes usado
     
     float M=atof(argv[2]);
     float T=atof(argv[3]);
@@ -67,11 +67,6 @@ int main(int argc, char **argv){
     int i,j;
     for(j=0;j<N;j++){
         fscanf(input, "%d %f %f %f %f %f %f\n",&ID[j], &x[j],&y[j], &z[j],&V_x[j],&V_y[j], &V_z[j]);//en kpc, km/s
-        
-        V_x[j]=V_x[j]*(3.1536*pow(10,10)/(3.0*pow(10,16)));
-        V_y[j]=V_y[j]*(3.1536*pow(10,10)/(3.0*pow(10,16)));
-        V_z[j]=V_z[j]*(3.1536*pow(10,10)/(3.0*pow(10,16)));
-        
         
     /*---------------------------------------------------------
      Usando RUNGEKUTTA:
@@ -147,9 +142,6 @@ int main(int argc, char **argv){
 /*---------------------------------------------------------
  FUNCIONES
  -----------------------------------------------------------*/
-
-float M = pow(10,12);
-int T=1;
 
 //Codigo define el metodo runge kutta para evolucionar los datos en evolve
 

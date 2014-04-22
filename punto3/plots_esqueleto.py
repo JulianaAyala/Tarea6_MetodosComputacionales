@@ -10,7 +10,7 @@ import numpy as np
 import sys, string, os
 from StringIO import StringIO
 
-#defino una funcion que cada vez que le meta el nombre de los archivos evolucionados me saque las graficas. Ya que son 5 archivos saca 5 graficas
+#defino una funcion que cada vez que le meta el nombre de los archivos evolucionados me saque las graficas.
 
 def plots(file,i):
     
