@@ -14,7 +14,9 @@
 
 float * get_memory(int n_steps);
 
-/*Remplazando los valores dados para A=20, B=1, C=30 y D=1 encontramos los valores de x(0)=30 y y(0)=20 para que exista el equilibrio*/
+/*Remplazando los valores dados para A=20, B=1, C=30 y D=1 encontramos los valores de x(0)=30 y y(0)=20 para que exista el equilibrio
+ Si 20x - xy=0 entonces x=0 o y=20 pero x=0 implica y=0 por la segunda ecuacion, entonces no queremos la solucion trivial x,y=0. Por lo tanto y=20 y reemplazando en la segunda ecuacion tenemos que x=30
+ */
 
 /*----MAIN-----*/
 int main(){
